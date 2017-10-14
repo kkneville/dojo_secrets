@@ -14,7 +14,7 @@
 
 <% if flash[:errors] %>
 	<% flash[:errors].each do |error| %>
-	<p><%=errors.full_messages%> </p>
+	<p><%= error.full_messages %> </p>
 <% end %>	
 <% end %>
 

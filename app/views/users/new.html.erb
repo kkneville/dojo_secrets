@@ -1,22 +1,35 @@
 
 
+<div class="jumbotron text-center">
+  <h1>Register</h1>
+  <p>Please register to join our community.</p> 
+</div>
 
-<h1>Register</h1>
-
+<div class="container">
+<div class="row">
+<div class="col-sm-4">
 
 <form class="form" action="register" method="post">
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 	
-	First Name: <input type="text" name="firstname">
-				
-	Last Name: <input type="text" name="lastname">
-				
-	Email: <input type="email" name="email">
-				
-	Password: <input type="password" name="password">
-				
-	Password Confirmation: <input type="password" name="password_confirmation">
-				
-	<input type="submit" value="Join">
+	<div class="row">
+		<p><input type="text" name="user[firstname]" value="First Name"></p>
+	</div>	
+	<div class="row">		
+		<p><input type="text" name="user[lastname]" value="Last Name"></p>
+	</div>		
+	<div class="row">			
+		<p><input type="text" name="user[email]" value="Email"></p>
+	</div>	
+	<div class="row">
+		<p><input type="text" name="user[password]" value="Password"></p>
+	</div>		
+	<div class="row">				
+		<p><input type="text" name="user[password_confirmation]" value="Confirm Email"></p>	
+	</div>		
+	<button type="submit">Register</button>	
 </form>
 
+</div>
+</div>
+</div>

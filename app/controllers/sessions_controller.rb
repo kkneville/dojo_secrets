@@ -3,8 +3,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-
-
   	if not user.empty?
   		if user.try(:authenticate, params[:user][:password])
   			session[:user_id] = user.id
