@@ -10,22 +10,22 @@
 <div class="col-sm-4">
 
 <form class="form" action="register" method="post">
-<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="hidden" name="authenticity_token" placeholder="<%= form_authenticity_token %>">
 	
 	<div class="row">
-		<p><input type="text" name="user[firstname]" value="First Name"></p>
+		<p><input type="text" name="user[firstname]" placeholder="First Name"></p>
 	</div>	
 	<div class="row">		
-		<p><input type="text" name="user[lastname]" value="Last Name"></p>
+		<p><input type="text" name="user[lastname]" placeholder="Last Name"></p>
 	</div>		
 	<div class="row">			
-		<p><input type="text" name="user[email]" value="Email"></p>
+		<p><input type="email" name="user[email]" placeholder="Email"></p>
 	</div>	
 	<div class="row">
-		<p><input type="text" name="user[password]" value="Password"></p>
+		<p><input type="password" name="user[password]" placeholder="Password"></p>
 	</div>		
 	<div class="row">				
-		<p><input type="text" name="user[password_confirmation]" value="Confirm Email"></p>	
+		<p><input type="password" name="user[password_confirmation]" placeholder="Confirm Password"></p>	
 	</div>		
 	<button type="submit">Register</button>	
 </form>

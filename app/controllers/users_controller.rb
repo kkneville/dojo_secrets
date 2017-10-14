@@ -5,8 +5,10 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		user = User.create(user_params)
+		print user_params
+		user = User.new(user_params)
 		if user.valid?
+			user.save
 			session[:user_id]= user.id
 			return redirect_to user_path user.id
 		end
@@ -17,7 +19,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
+		@user = User.find(session[:user_id])
 		return render "/users/show.html.erb"
 	end	
 

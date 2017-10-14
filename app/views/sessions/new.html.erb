@@ -1,19 +1,33 @@
-<h1>Register</h1>
+<div class="jumbotron text-center">
+  <h1>Login</h1>
+  <p>Please login with your email and password.</p> 
+</div>
 
+<div class="container">
 <div class="row">
+<div class="col-sm-4">
 
-<form class="form" action="register" method="post">
-<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<form class="form" action="login" method="post">
+<input type="hidden" name="authenticity_token" placeholder="<%= form_authenticity_token %>">
 	
-					First Name: <input type="text" name="user[firstname]">
-				
-					Last Name: <input type="text" name="user[lastname]">
-				
-					Email: <input type="text" name="user[email]">
-				
-					Password: <input type="text" name="user[password]">
-				
-					Password Confirmation: <input type="text" name="user[password_confirmation]">		
-
-					<button type="submit">Register</button>	
+	<div class="row">
+		<p><input type="text" name="user[firstname]" placeholder="First Name"></p>
+	</div>	
+	<div class="row">		
+		<p><input type="text" name="user[lastname]" placeholder="Last Name"></p>
+	</div>		
+	<div class="row">			
+		<p><input type="email" name="user[email]" placeholder="Email"></p>
+	</div>	
+	<div class="row">
+		<p><input type="password" name="user[password]" placeholder="Password"></p>
+	</div>		
+	<div class="row">				
+		<p><input type="password" name="user[password_confirmation]" placeholder="Confirm Password"></p>	
+	</div>		
+	<button type="submit">Login</button>	
 </form>
+
+</div>
+</div>
+</div>
