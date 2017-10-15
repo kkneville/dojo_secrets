@@ -5,12 +5,10 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :firstname, :lastname, :email, presence: :true
   validates :email, uniqueness: :true, format: {with: email_regex}
+  before_save :downcase_email
 
-  	before_save do 
-		self.email = email.downcase!
-	end	
-
-
-
-
+  def downcase_email
+  	self.email.downcase
+  end 
+  	
 end

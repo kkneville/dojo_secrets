@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   post 'login' => 'sessions#create'
 
-  get 'show/:id' => 'session#show', as: 'user'
+  get 'show/:id' => 'users#show', as: 'user'
 
   delete 'logout' => 'sessions#destroy', as: 'logout'
 

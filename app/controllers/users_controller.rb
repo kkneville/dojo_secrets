@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(session[:user_id])
+		@person = User.find(params[:id])
 		return render "/users/show.html.erb"
 	end	
 

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
   def new
   end
 
@@ -19,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
   	session.delete(:user_id) if session[:user_id]
-  	return redirect "users/new.html.erb"
+  	return redirect_to "/register"
   end
 
 
