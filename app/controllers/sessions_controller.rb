@@ -4,24 +4,22 @@ class SessionsController < ApplicationController
   end
 
   def create
-  	if not user.empty?
-  		if user.try(:authenticate, params[:user][:password])
-  			session[:user_id] = user.id
-
+  	user = User.find_by_email(params[:user][:email])
+  	if user
+ 		if user.try(:authenticate, params[:user][:password])
+ 			session[:user_id] = user.id
   			return redirect_to user_path user.id
-  		end
-  		flash[:errors] = ['Incorrect password']
+  		end	
   	else
-  		flash[:errors] = ['Account not found, please register first.']
+  		flash[:errors] = ['Email and password do not match.']
   	end	
 
-  	return redirect_to session_path 
+	return redirect_to '/login'
   end
 
   def destroy
   	session.delete(:user_id) if session[:user_id]
-  	return redirect_to "/register"
+  	return redirect_to "/login"
   end
-
 
 end
