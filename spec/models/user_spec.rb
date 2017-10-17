@@ -23,16 +23,23 @@ RSpec.describe User, type: :model do
     it 'email is blank' do
       expect(build(:user, email: '')).to be_invalid
     end
+
+# This one is not working corrently, fails on email saving in lowercase, but shoudln't fail, program does in fact save as lowercase
+
     it 'email format is wrong' do
       emails = %w[@ user@ @example.com]
       emails.each do |email|
         expect(build(:user, email: email)).to be_invalid
       end
     end
+
+#This is also fails, possibly evaluating before being downcased? Program behaviour is correct, test still fails, need to rewrite test.
+
     it 'email is not unique' do
       create(:user)
       expect(create(:user)).to be_invalid
     end
+
     it 'password is blank' do
       expect(build(:user, password: '')).to be_invalid
     end
